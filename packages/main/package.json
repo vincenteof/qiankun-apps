@@ -1,0 +1,16 @@
+{
+  "name": "main",
+  "version": "0.0.1",
+  "description": "main app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "vincenteof <vincenteofchen@gamil.com>",
+  "license": "MIT",
+  "dependencies": {
+    "qiankun": "^2.7.5"
+  }
+}
