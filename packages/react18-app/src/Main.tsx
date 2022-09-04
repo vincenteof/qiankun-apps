@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App'
+import App from '@src/App'
 
 const Intro1 = lazy(() => import('./routes/Intro1'))
 const Intro2 = lazy(() => import('./routes/Intro2'))
 
 function Main() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/react18' : '/'}>
       <Routes>
         <Route path="/" element={<App />}>
           <Route

@@ -4,9 +4,16 @@ const common = require('./webpack.common.js')
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
+  output: {
+    filename: 'scripts/[name].bundle.js',
+    chunkFilename: 'scripts/[name].chunk.js',
+  },
   devServer: {
     static: './dist',
     port: 8081,
     historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
 })

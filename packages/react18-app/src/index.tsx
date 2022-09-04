@@ -1,10 +1,36 @@
+import '../public-path'
 import React from 'react'
-import { createRoot } from 'react-dom/client'
-import Main from './Main'
+import { createRoot, Root } from 'react-dom/client'
+import Main from '@src/Main'
 
-const container = document.getElementById('app')
+let root: Root | null = null
 
-if (container) {
-  const root = createRoot(container)
-  root.render(<Main />)
+function render(props: any) {
+  const { container: qiankunContainer } = props
+  const container = qiankunContainer
+    ? qiankunContainer.querySelector('#app')
+    : document.querySelector('#app')
+
+  if (container) {
+    root = createRoot(container)
+    root.render(<Main />)
+  }
+}
+
+if (!window.__POWERED_BY_QIANKUN__) {
+  render({})
+}
+
+export async function bootstrap() {
+  console.log('[react18] react app bootstraped')
+}
+
+export async function mount(props: any) {
+  console.log('[react18] props from main framework', props)
+  render(props)
+}
+
+export async function unmount() {
+  console.log('[react18] react app unmount')
+  root?.unmount()
 }

@@ -1,16 +1,24 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const packageName = require('./package.json').name
 
 module.exports = {
   entry: {
     app: './src/index.tsx',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'scripts/[name].[contenthash].bundle.js',
+    chunkFilename: 'scripts/[name].[contenthash].chunk.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    libraryTarget: 'umd',
+    library: `${packageName}`,
+    chunkLoadingGlobal: `webpackJsonp_${packageName}`,
   },
   resolve: {
+    alias: {
+      '@src': path.resolve('./src'),
+    },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {

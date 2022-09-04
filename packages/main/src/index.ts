@@ -9,4 +9,4 @@ registerMicroApps([
   },
 ])
 
-start()
+start({ sandbox: { experimentalStyleIsolation: true } })

@@ -6,7 +6,8 @@ module.exports = {
     app: './src/index.ts',
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'scripts/[name].[contenthash].bundle.js',
+    chunkFilename: 'scripts/[name].[contenthash].chunk.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
