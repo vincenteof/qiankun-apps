@@ -1,4 +1,4 @@
-import { registerMicroApps, start } from 'qiankun'
+import { registerMicroApps, start, setDefaultMountApp } from 'qiankun'
 
 registerMicroApps([
   {
@@ -8,5 +8,7 @@ registerMicroApps([
     activeRule: '/react18',
   },
 ])
+
+setDefaultMountApp('/react18')
 
 start({ sandbox: { experimentalStyleIsolation: true } })
