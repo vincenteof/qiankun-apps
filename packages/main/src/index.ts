@@ -7,6 +7,12 @@ registerMicroApps([
     container: '#sub-app',
     activeRule: '/react18',
   },
+  {
+    name: 'vue3-app',
+    entry: '//localhost:8082',
+    container: '#sub-app',
+    activeRule: '/vue3',
+  },
 ])
 
 setDefaultMountApp('/react18')

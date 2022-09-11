@@ -1,6 +1,6 @@
 {
   "name": "qiankun-apps",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "description": "demos for qiankun",
   "scripts": {
