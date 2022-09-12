@@ -1,4 +1,5 @@
 import { registerMicroApps, start, setDefaultMountApp } from 'qiankun'
+import './index.less'
 
 registerMicroApps([
   {

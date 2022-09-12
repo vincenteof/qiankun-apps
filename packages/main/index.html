@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>QianKun Example</title>
+    <script>
+      function push(subapp) {
+        history.pushState(null, subapp, subapp)
+      }
+    </script>
   </head>
   <body>
-    <div id="sub-app"></div>
+    <div class="mainapp">
+      <!-- 标题栏 -->
+      <header class="mainapp-header">
+        <h1>QianKun</h1>
+      </header>
+      <div class="mainapp-main">
+        <!-- 侧边栏 -->
+        <ul class="mainapp-sidemenu">
+          <li onclick="push('/react18')">React18</li>
+          <li onclick="push('/vue3')">Vue3</li>
+        </ul>
+        <!-- 子应用  -->
+        <main id="subapp-container">
+          <div id="sub-app"></div>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
