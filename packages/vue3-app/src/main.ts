@@ -1,14 +1,12 @@
 import { createApp } from 'vue'
-import {
-  renderWithQiankun,
-  qiankunWindow,
-} from 'vite-plugin-qiankun/dist/helper'
+import { renderWithQiankun, qiankunWindow } from './qiankunHelpers'
 import './style.css'
 import App from './App.vue'
 
 let app: any = null
 
 if (qiankunWindow.__POWERED_BY_QIANKUN__) {
+  console.log('qiankunWindow: ', qiankunWindow)
   renderWithQiankun({
     mount(props) {
       console.log('[vue3] props from main framework', props)
