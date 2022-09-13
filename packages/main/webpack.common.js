@@ -12,12 +12,12 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ['.js', '.ts'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.[tj]s$/,
+        test: /\.[tj]sx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

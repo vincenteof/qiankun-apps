@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'development',
@@ -8,6 +9,7 @@ module.exports = merge(common, {
     filename: 'scripts/[name].bundle.js',
     chunkFilename: 'scripts/[name].chunk.js',
   },
+  plugins: [new ReactRefreshWebpackPlugin()],
   devServer: {
     static: './dist',
     historyApiFallback: true,
