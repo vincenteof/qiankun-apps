@@ -3,24 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>QianKun Example</title>
-    <script>
+    <!-- <script>
       function push(subapp) {
         history.pushState(null, subapp, subapp)
       }
-    </script>
+    </script> -->
   </head>
   <body>
     <div class="mainapp">
-      <!-- 标题栏 -->
-      <header class="mainapp-header">
-        <h1>QianKun</h1>
-      </header>
       <div class="mainapp-main">
-        <!-- 侧边栏 -->
-        <ul class="mainapp-sidemenu">
-          <li onclick="push('/react18')">React18</li>
-          <li onclick="push('/vue3')">Vue3</li>
-        </ul>
         <!-- 子应用  -->
         <main id="subapp-container"></main>
       </div>

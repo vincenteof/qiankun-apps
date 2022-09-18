@@ -11,6 +11,8 @@
   "author": "vincenteof <vincenteofchen@gamil.com>",
   "license": "MIT",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.23.2",
     "qiankun": "^2.7.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
