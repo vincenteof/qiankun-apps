@@ -16,7 +16,9 @@ function Main(props: MainAppProps) {
   return (
     <Layout>
       <Header className="header">
-        <div className="logo" />
+        <div className="logo">
+          <h1 className="logo-title">Qiankun Playground</h1>
+        </div>
       </Header>
       <Layout>
         <SideBar />

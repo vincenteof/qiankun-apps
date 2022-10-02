@@ -1,20 +1,17 @@
 import React from 'react'
 import { Layout, Menu, MenuProps } from 'antd'
-import { FacebookOutlined, AlibabaOutlined } from '@ant-design/icons'
 import { push } from '../../utils'
 
 const { Sider } = Layout
 
 const menuItems: MenuProps['items'] = [
   {
-    icon: React.createElement(FacebookOutlined),
     key: '/react18',
-    label: 'react18',
+    label: 'React18',
   },
   {
-    icon: React.createElement(AlibabaOutlined),
     key: '/vue3',
-    label: 'vue3',
+    label: 'Vue3',
   },
 ]
 
