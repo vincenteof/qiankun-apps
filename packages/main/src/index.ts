@@ -9,14 +9,14 @@ const loader = (loading: boolean) => render({ loading })
 registerMicroApps([
   {
     name: 'react18-app',
-    entry: '//localhost:8081',
+    entry: '//localhost:8081/',
     container: '#subapp-viewport',
     activeRule: '/react18',
     loader,
   },
   {
     name: 'vue3-app',
-    entry: '//localhost:8082',
+    entry: '//localhost:8082/',
     container: '#subapp-viewport',
     activeRule: '/vue3',
     loader,
