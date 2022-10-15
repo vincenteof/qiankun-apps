@@ -7,12 +7,12 @@ module.exports = {
     app: './src/index.tsx',
   },
   output: {
-    filename: 'scripts/[name].[contenthash].bundle.js',
-    chunkFilename: 'scripts/[name].[contenthash].chunk.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    libraryTarget: 'umd',
-    library: `${packageName}`,
+    library: {
+      name: `${packageName}`,
+      type: 'umd',
+    },
     chunkLoadingGlobal: `webpackJsonp_${packageName}`,
   },
   resolve: {

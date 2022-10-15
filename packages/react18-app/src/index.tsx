@@ -2,6 +2,7 @@ import '../public-path'
 import React from 'react'
 import { createRoot, Root } from 'react-dom/client'
 import Main from '@src/Main'
+import './style.css'
 
 let root: Root | null = null
 
@@ -22,7 +23,7 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('[react18] react app bootstraped')
+  console.log('[react18] react app bootstrapped')
 }
 
 export async function mount(props: any) {
