@@ -85,6 +85,7 @@ importers:
       terser-webpack-plugin: ^5.3.6
       webpack: ^5.74.0
       webpack-cli: ^4.10.0
+      webpack-define-config: workspace:*
       webpack-dev-server: ^4.10.1
       webpack-merge: ^5.8.0
     dependencies:
@@ -109,10 +110,11 @@ importers:
       terser-webpack-plugin: 5.3.6_webpack@5.74.0
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-cli: 4.10.0_6k4gs4iynuwn6fxh2o2g4kzpru
+      webpack-define-config: link:../webpack-define-config
       webpack-dev-server: 4.10.1_5v66e2inugklgvlh4huuavolfq
       webpack-merge: 5.8.0
 
-  packages/vue-app:
+  packages/vue3-app:
     specifiers:
       '@vitejs/plugin-vue': ^3.0.3
       typescript: ^4.6.4
@@ -128,6 +130,12 @@ importers:
       vite: 3.0.9
       vite-plugin-qiankun: 1.0.15_dl5nou5ldq7zlftzutsw4wm3t4
       vue-tsc: 0.39.5_typescript@4.8.2
+
+  packages/webpack-define-config:
+    specifiers:
+      tiny-invariant: ^1.3.1
+    dependencies:
+      tiny-invariant: 1.3.1
 
 packages:
 
@@ -1804,7 +1812,7 @@ packages:
       '@vue/shared': 3.2.38
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.16
+      postcss: 8.4.18
       source-map: 0.6.1
 
   /@vue/compiler-ssr/3.2.38:
@@ -4673,6 +4681,7 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
 
   /postcss/8.4.18:
     resolution: {integrity: sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==}
@@ -4681,7 +4690,6 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: true
 
   /pretty-error/4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
@@ -5870,6 +5878,10 @@ packages:
     resolution: {integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==}
     dev: true
 
+  /tiny-invariant/1.3.1:
+    resolution: {integrity: sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==}
+    dev: false
+
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -6144,7 +6156,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.14.54
-      postcss: 8.4.16
+      postcss: 8.4.18
       resolve: 1.22.1
       rollup: 2.77.3
     optionalDependencies:
