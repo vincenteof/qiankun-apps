@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
   entry: {
     app: './src/index.ts',
@@ -20,27 +22,31 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-typescript',
+              '@babel/preset-react',
+            ],
+            plugins: [!isProd && require.resolve('react-refresh/babel')].filter(
+              Boolean
+            ),
+          },
         },
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.less$/i,
         use: [
           'style-loader',
           'css-loader',
           {
-            loader: 'less-loader',
+            loader: 'postcss-loader',
             options: {
-              lessOptions: {
-                // modifyVars: {
-                //   'primary-color': '#FEF5ED',
-                //   'link-color': '#D3E4CD',
-                //   'border-radius-base': '2px',
-                // },
-                javascriptEnabled: true,
+              postcssOptions: {
+                plugins: {
+                  tailwindcss: {},
+                  autoprefixer: {},
+                },
               },
             },
           },

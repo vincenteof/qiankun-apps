@@ -1,10 +1,6 @@
 import React from 'react'
-import { Layout, Menu, MenuProps } from 'antd'
-import { push } from '../../utils'
 
-const { Sider } = Layout
-
-const menuItems: MenuProps['items'] = [
+const menuItems = [
   {
     key: '/react18',
     label: 'React18',
@@ -18,21 +14,7 @@ const menuItems: MenuProps['items'] = [
 type SideBarProps = {}
 
 function SideBar(props: SideBarProps) {
-  const selectedKey = menuItems?.find(
-    (x) => window.location.pathname === x?.key
-  )?.key
-
-  return (
-    <Sider width={200}>
-      <Menu
-        className="sidebar-menu"
-        mode="inline"
-        selectedKeys={[`${selectedKey || 'react18'}`]}
-        items={menuItems}
-        onSelect={({ key }) => push(key)}
-      />
-    </Sider>
-  )
+  return <></>
 }
 
 export default SideBar
