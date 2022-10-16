@@ -14,7 +14,6 @@ function defineConfig(config = {}) {
     packageName && title,
     'Minimal config like `{ packageName,title }` should be provided!'
   )
-  // todo: assert
   const entry = config.entry || './src/index'
   const devServer = config.devServer
   const context = config.context
@@ -61,6 +60,7 @@ function defineConfig(config = {}) {
             },
           },
         },
+        // todo: css module
         {
           test: /\.css$/i,
           use: [
