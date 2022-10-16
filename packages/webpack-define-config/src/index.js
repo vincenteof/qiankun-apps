@@ -66,6 +66,7 @@ function defineConfig(config = {}) {
           use: [
             isProd ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
+            'postcss-loader',
           ],
         },
         {
