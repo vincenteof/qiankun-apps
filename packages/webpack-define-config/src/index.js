@@ -11,7 +11,7 @@ function defineConfig(config = {}) {
   const packageName = config.packageName
   const title = config.title
   invariant(
-    !(packageName && title),
+    packageName && title,
     'Minimal config like `{ packageName,title }` should be provided!'
   )
   // todo: assert
@@ -49,6 +49,16 @@ function defineConfig(config = {}) {
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-typescript',
+                '@babel/preset-react',
+              ],
+              plugins: [
+                !isProd && require.resolve('react-refresh/babel'),
+              ].filter(Boolean),
+            },
           },
         },
         {
