@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+  @apply m-0;
+}
+
 .mainapp {
   @apply leading-none h-full;
 }

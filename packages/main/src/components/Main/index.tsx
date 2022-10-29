@@ -34,7 +34,7 @@ function SideNav() {
           <div className="flex flex-col h-full w-full px-6 py-2">
             {navConfig.map((conf) => (
               <button
-                className="flex h-12 w-full items-center justify-center border-2 border-gray-900  my-4 btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)] text-black bg-white ease-out hover:translate-y-1 transition-all rounded"
+                className="flex h-12 text-base w-full items-center justify-center border-2 border-gray-900  my-4 btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)] text-black bg-white ease-out hover:translate-y-1 transition-all rounded"
                 key={conf.key}
                 onClick={() => push(conf.key)}
               >
@@ -54,8 +54,8 @@ type MainContentProps = {
 function MainContent(props: MainContentProps) {
   const { loading } = props
   return (
-    <main className="flex flex-col w-full bg-white overflow-x-hidden overflow-y-auto mb-14">
-      <div className="flex w-full mx-auto px-6 py-8">
+    <main className="flex flex-1 bg-white overflow-x-hidden overflow-y-auto">
+      <div className="flex flex-1 px-6 py-8">
         <div className="flex flex-col w-full h-full text-gray-900 text-xl border-4 border-gray-900 border-dashed">
           {loading && <h2>loading...</h2>}
           <div id="subapp-viewport" />
