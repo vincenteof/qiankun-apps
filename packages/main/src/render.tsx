@@ -1,7 +1,6 @@
 import React from 'react'
 import { createRoot, Root } from 'react-dom/client'
 import Main, { MainAppProps } from './components/Main'
-import 'antd/dist/antd.less'
 
 let root: Root | null = null
 
