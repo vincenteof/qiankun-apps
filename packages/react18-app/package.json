@@ -7,7 +7,10 @@
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "qiankun"
+  ],
   "author": "vincenteof <vincenteofchen@gamil.com>",
   "license": "ISC",
   "dependencies": {

@@ -1,19 +1,21 @@
 {
-  "name": "react18-demo",
+  "name": "shared",
   "version": "0.0.1",
-  "description": "react 18 demo",
+  "description": "shared dependencies between qiankun sub apps using module federation",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "keywords": [
-    "react",
-    "qiankun"
+    "shared dependencies",
+    "qiankun",
+    "module federation"
   ],
   "author": "vincenteof <vincenteofchen@gamil.com>",
   "license": "ISC",
   "dependencies": {
+    "antd": "^4.23.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
@@ -38,8 +40,8 @@
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
+    "webpack-define-config": "workspace:*",
     "webpack-dev-server": "^4.10.1",
-    "webpack-merge": "^5.8.0",
-    "webpack-define-config": "workspace:*"
+    "webpack-merge": "^5.8.0"
   }
 }

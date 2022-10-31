@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "keywords": [
+    "vue",
+    "qiankun"
+  ],
+  "author": "vincenteof <vincenteofchen@gamil.com>",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
