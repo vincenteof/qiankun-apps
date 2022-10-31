@@ -24,6 +24,10 @@ const navConfig = [
     key: '/vue3',
     label: 'Vue3',
   },
+  {
+    key: '/r18demo',
+    label: 'React18 demo',
+  },
 ]
 
 function SideNav() {
