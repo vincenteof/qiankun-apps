@@ -1,0 +1,19 @@
+.example {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  border: 3px dotted #91d5ff;
+  pointer-events: none;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  flex: 1;
+}

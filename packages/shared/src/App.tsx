@@ -1,11 +1,18 @@
-import * as React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainLayout from '@src/layout/Main'
+import SimpleFramer from '@src/pages/SimpleFramer'
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <h1>lib service</h1>
-      <Outlet />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="framer" element={<SimpleFramer />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
+
+export default App
