@@ -1,5 +1,8 @@
 import React from 'react'
+import clx from 'classnames'
 import { push } from '@src/utils'
+import { useCurrentSubApp } from '@src/hooks'
+
 import './index.css'
 
 export type MainAppProps = {
@@ -31,20 +34,35 @@ const navConfig = [
 ]
 
 function SideNav() {
+  const currentConf = useCurrentSubApp(navConfig)
+  // todo: difference between hover and selected
+  const btnBaseStyle =
+    'flex h-12 text-base w-full items-center justify-center border-2 border-gray-900  my-4 btn shadow-[0_9px_0_rgb(0,0,0)] text-black bg-white ease-out transition-all rounded'
+  const btnHoverStyle =
+    'hover:shadow-[0_4px_0px_rgb(0,0,0)] hover:translate-y-1'
+  const btnSelectedStyle = 'shadow-[0_4px_0px_rgb(0,0,0)] translate-y-1'
+
   return (
     <nav className="flex w-72 h-full bg-pink-500">
       <div className="w-full flex mx-auto px-6 py-8">
         <div className="w-full h-full flex items-center justify-center text-gray-900 text-xl border-4 border-gray-900 border-dashed">
           <div className="flex flex-col h-full w-full px-6 py-2">
-            {navConfig.map((conf) => (
-              <button
-                className="flex h-12 text-base w-full items-center justify-center border-2 border-gray-900  my-4 btn shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)] text-black bg-white ease-out hover:translate-y-1 transition-all rounded"
-                key={conf.key}
-                onClick={() => push(conf.key)}
-              >
-                {conf.label}
-              </button>
-            ))}
+            {navConfig.map((conf) => {
+              const selected = currentConf?.key === conf.key
+              return (
+                <button
+                  className={clx(
+                    btnBaseStyle,
+                    btnHoverStyle,
+                    selected && btnSelectedStyle
+                  )}
+                  key={conf.key}
+                  onClick={() => push(conf.key)}
+                >
+                  {conf.label}
+                </button>
+              )
+            })}
           </div>
         </div>
       </div>
