@@ -12,7 +12,7 @@ function Main() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route
-            index
+            path="framer"
             element={
               <Suspense fallback="loading">
                 <FramerDemo />

@@ -1,2 +1,12 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 body {
+  margin: 0;
+}
+
+#app {
+  margin: 0 auto;
+  text-align: center;
 }

@@ -1,7 +1,9 @@
 const { defineConfig } = require('webpack-define-config')
 const { merge } = require('webpack-merge')
 const { ModuleFederationPlugin } = require('webpack').container
-const packageName = require('./package.json').name
+const pkgJson = require('./package.json')
+const packageName = pkgJson.name
+const deps = pkgJson.dependencies
 
 const config = defineConfig({
   packageName,
@@ -21,7 +23,16 @@ const mfConfig = {
       remotes: {
         '@shared': 'shared_remote@http://localhost:8084/remoteEntry.js',
       },
-      shared: ['react', 'react-dom/client', 'antd'],
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: deps['react'],
+        },
+        'react-dom/client': {
+          singleton: true,
+          requiredVersion: deps['react-dom'],
+        },
+      },
     }),
   ],
 }

@@ -1,6 +1,6 @@
 import { registerMicroApps, start, setDefaultMountApp } from 'qiankun'
 import render from './render'
-import './index.css'
+import './style.css'
 
 render({ loading: true })
 

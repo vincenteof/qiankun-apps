@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import 'antd/dist/antd.css'
-import { Slider, SliderSingleProps } from 'antd'
+import { Slider, SliderProps } from '@mui/material'
 import './style.css'
 
 // todo: antd sharing
 // todo: remote ts
-interface FramerPlaygroundProps {
-  getSliderTooltipPopupContainer?: SliderSingleProps['getTooltipPopupContainer']
-}
+interface FramerPlaygroundProps {}
 
 function FramerPlayground(props: FramerPlaygroundProps) {
   const [x, setX] = useState(0)
@@ -25,28 +22,43 @@ function FramerPlayground(props: FramerPlaygroundProps) {
         />
       </div>
       <div className="inputs">
-        <Slider
+        <SliderItem
+          label="x"
           min={-200}
           max={200}
           value={x}
-          onChange={setX}
-          getTooltipPopupContainer={props.getSliderTooltipPopupContainer}
+          onChange={(_, value) => setX(value as number)}
         />
-        <Slider
+        <SliderItem
+          label="y"
           min={-200}
           max={200}
           value={y}
-          onChange={setY}
-          getTooltipPopupContainer={props.getSliderTooltipPopupContainer}
+          onChange={(_, value) => setY(value as number)}
         />
-        <Slider
+        <SliderItem
+          label="rotate"
           min={-180}
           max={180}
           value={rotate}
-          onChange={setRotate}
-          getTooltipPopupContainer={props.getSliderTooltipPopupContainer}
+          onChange={(_, value) => setRotate(value as number)}
         />
       </div>
+    </div>
+  )
+}
+
+interface SliderItemProps extends SliderProps {
+  label: string
+}
+
+function SliderItem(props: SliderItemProps) {
+  const { label, ...sliderProps } = props
+  return (
+    <div className="slider-item">
+      <div className="slider-item-label">{label}</div>
+      <Slider {...sliderProps} />
+      <div className="slider-item-value">{sliderProps.value}</div>
     </div>
   )
 }

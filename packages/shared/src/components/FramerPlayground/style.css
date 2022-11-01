@@ -7,7 +7,7 @@
   width: 200px;
   height: 200px;
   border-radius: 20px;
-  border: 3px dotted #91d5ff;
+  border: 3px dotted rgb(25, 118, 210);
   pointer-events: none;
 }
 
@@ -16,4 +16,21 @@
   flex-direction: column;
   padding-left: 50px;
   flex: 1;
+}
+
+.slider-item {
+  color: rgb(25, 118, 210);
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.slider-item-label {
+  flex-basis: 10rem;
+}
+
+.slider-item-value {
+  flex-basis: 6rem;
+  margin-left: 2rem;
+  border-bottom: 1px dotted rgb(25, 118, 210);
 }

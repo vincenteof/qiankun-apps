@@ -29,7 +29,16 @@ const mfConfig = {
       exposes: {
         './FramerPlayground': './src/components/FramerPlayground',
       },
-      shared: ['react', 'react-dom/client'],
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: '^18.2.0',
+        },
+        'react-dom/client': {
+          singleton: true,
+          requiredVersion: '^18.2.0',
+        },
+      },
     }),
   ],
 }
