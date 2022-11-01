@@ -12,8 +12,8 @@ export type MainAppProps = {
 function Header() {
   return (
     <header className="flex justify-between items-center bg-blue-300 py-6 px-10">
-      <div className="flex font-medium">Qiankun Playground</div>
-      <div className="flex font-medium">Right</div>
+      <div className="flex font-medium font-mono">Qiankun Playground</div>
+      <div className="flex font-medium font-mono">Right</div>
     </header>
   )
 }
