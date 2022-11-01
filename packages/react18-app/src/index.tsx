@@ -1,37 +1,30 @@
 import '../public-path'
-import React from 'react'
-import { createRoot, Root } from 'react-dom/client'
-import Main from '@src/Main'
-import './style.css'
 
-let root: Root | null = null
-
-function render(props: any) {
-  const { container: qiankunContainer } = props
-  const container = qiankunContainer
-    ? qiankunContainer.querySelector('#app')
-    : document.querySelector('#app')
-
-  if (container) {
-    root = createRoot(container)
-    root.render(<Main />)
+async function bootstrapWithoutQiankun() {
+  if (!window.__POWERED_BY_QIANKUN__) {
+    const { render } = await import('./bootstrap')
+    render({})
   }
 }
 
-if (!window.__POWERED_BY_QIANKUN__) {
-  render({})
-}
+bootstrapWithoutQiankun()
+
+const umountHandlerRef: { current?: () => void } = { current: undefined }
 
 export async function bootstrap() {
   console.log('[react18] react app bootstrapped')
 }
 
+// react 渲染逻辑会用到 remote 提供的依赖，因为对应逻辑必须放在一个异步边界里
+// 异步加载边界不好理解，可以用 webpack 文档中 Module Federation 介绍中的一句话来说明：加载 remote module ，必须在任意一个异步 chunk 加载之后执行
 export async function mount(props: any) {
   console.log('[react18] props from main framework', props)
-  render(props)
+  const { render, unmount } = await import('./bootstrap')
+  render({})
+  umountHandlerRef.current = unmount
 }
 
 export async function unmount() {
   console.log('[react18] react app unmount')
-  root?.unmount()
+  umountHandlerRef.current?.()
 }

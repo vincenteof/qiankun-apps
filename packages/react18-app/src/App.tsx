@@ -1,14 +1,44 @@
-import * as React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainLayout from '@src/layout/Main'
 
-export default function App() {
+const Intro1 = lazy(() => import('./pages/Intro1'))
+const Intro2 = lazy(() => import('./pages/Intro2'))
+const FramerDemo = lazy(() => import('./pages/FramerDemo'))
+
+function Main() {
   return (
-    <div>
-      <h1>这是一个 React18 应用</h1>
-      <nav style={{ borderBottom: 'solid 1px', paddingBottom: '1rem' }}>
-        <Link to="/intro1">说明1</Link> | <Link to="/intro2">说明2</Link>
-      </nav>
-      <Outlet />
-    </div>
+    <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/react18' : '/'}>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route
+            index
+            element={
+              <Suspense fallback="loading">
+                <FramerDemo />
+              </Suspense>
+            }
+          />
+          <Route
+            path="intro1"
+            element={
+              <Suspense fallback="loading">
+                <Intro1 />
+              </Suspense>
+            }
+          />
+          <Route
+            path="Intro2"
+            element={
+              <Suspense fallback="loading">
+                <Intro2 />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
+
+export default Main

@@ -1,4 +1,6 @@
 const { defineConfig } = require('webpack-define-config')
+const { merge } = require('webpack-merge')
+const { ModuleFederationPlugin } = require('webpack').container
 const packageName = require('./package.json').name
 
 const config = defineConfig({
@@ -14,4 +16,22 @@ const config = defineConfig({
 
 const isProd = process.env.NODE_ENV === 'production'
 
-module.exports = isProd ? config.prod : config.dev
+const mfConfig = {
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'shared_remote',
+      // https://github.com/umijs/qiankun/issues/1148
+      library: {
+        type: 'window',
+        name: 'shared_remote',
+      },
+      filename: 'remoteEntry.js',
+      exposes: {
+        './FramerPlayground': './src/components/FramerPlayground',
+      },
+      shared: ['react', 'react-dom/client'],
+    }),
+  ],
+}
+
+module.exports = merge(isProd ? config.prod : config.dev, mfConfig)
