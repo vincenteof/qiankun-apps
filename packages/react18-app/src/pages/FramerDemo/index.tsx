@@ -1,6 +1,8 @@
 import React from 'react'
 
-const FramerPlayground = React.lazy(() => import('@shared/FramerPlayground'))
+const FramerPlayground = React.lazy(
+  () => import('@shared/components/FramerPlayground')
+)
 
 function FramerDemo() {
   return (
