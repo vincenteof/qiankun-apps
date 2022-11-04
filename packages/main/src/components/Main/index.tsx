@@ -2,7 +2,7 @@ import React from 'react'
 import clx from 'classnames'
 import { push } from '@src/utils'
 import { useCurrentSubApp } from '@src/hooks'
-
+import Loading from '../Loading'
 import './index.css'
 
 export type MainAppProps = {
@@ -79,7 +79,7 @@ function MainContent(props: MainContentProps) {
     <main className="flex flex-1 bg-white overflow-x-hidden overflow-y-auto">
       <div className="flex flex-1 px-6 py-8">
         <div className="flex flex-col w-full h-full text-gray-900 text-xl border-4 border-gray-900 border-dashed">
-          {loading && <h2>loading...</h2>}
+          {loading && <Loading />}
           <div id="subapp-viewport" />
         </div>
       </div>
