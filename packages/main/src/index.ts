@@ -32,4 +32,4 @@ registerMicroApps([
 
 setDefaultMountApp('/react18')
 
-start({ sandbox: { experimentalStyleIsolation: true } })
+start({ sandbox: { experimentalStyleIsolation: true }, prefetch: true })
