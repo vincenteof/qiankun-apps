@@ -1,11 +1,25 @@
-import * as React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainLayout from '@src/layout/Main'
+const FramerDemo = lazy(() => import('./pages/FramerDemo'))
 
-export default function App() {
+function Main() {
   return (
-    <div>
-      <h1>react demos</h1>
-      <Outlet />
-    </div>
+    <BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? '/r18demo' : '/'}>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route
+            index
+            element={
+              <Suspense fallback="loading">
+                <FramerDemo />
+              </Suspense>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
+
+export default Main

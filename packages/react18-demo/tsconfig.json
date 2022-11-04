@@ -6,6 +6,9 @@
       "@src/*": [
         "./src/*"
       ],
+      "@shared/*": [
+        "../shared/src/*"
+      ],
     },
     "jsx": "react",
     "typeRoots": [

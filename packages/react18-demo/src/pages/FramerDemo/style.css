@@ -1,0 +1,10 @@
+.framer-demo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.playground-wrap {
+  width: 40rem;
+}
