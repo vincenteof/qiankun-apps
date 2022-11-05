@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from '@src/layout/Main'
 
 const Intro1 = lazy(() => import('./pages/Intro1'))
@@ -35,6 +35,7 @@ function Main() {
               </Suspense>
             }
           />
+          <Route index element={<Navigate replace to="/framer" />} />
         </Route>
       </Routes>
     </BrowserRouter>

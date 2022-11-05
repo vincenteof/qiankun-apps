@@ -7,6 +7,8 @@ interface TabsProps {
   selectedValue?: any
 }
 
+// https://flowbite.com/docs/components/tabs/
+
 function Tabs(props: TabsProps) {
   const { items, onChange, selectedValue } = props
   return (
