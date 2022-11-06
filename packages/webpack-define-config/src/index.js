@@ -18,6 +18,7 @@ function defineConfig(config = {}) {
   const devServer = config.devServer
   const context = config.context
   const outputDir = config.outputDir
+  const publicPath = config.publicPath
 
   const isProd = process.env.NODE_ENV === 'production'
 
@@ -34,6 +35,7 @@ function defineConfig(config = {}) {
         type: 'umd',
       },
       chunkLoadingGlobal: `webpackJsonp_${packageName}`,
+      publicPath,
     },
     resolve: {
       alias: {
