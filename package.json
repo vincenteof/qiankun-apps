@@ -5,13 +5,15 @@
   "description": "demos for qiankun",
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "serve": "turbo run serve"
   },
   "keywords": [],
   "author": "vincenteof <vincenteofchen@gamil.com>",
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "serve": "^14.0.1",
     "turbo": "^1.4.5",
     "typescript": "^4.8.2"
   }

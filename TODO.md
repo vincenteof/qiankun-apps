@@ -6,3 +6,4 @@
 6. suspense loading 样式
 7. 切换 vue 应用整体抖动
 8. react18 切到其他整体高度抖动
+9. vue build 失败
