@@ -3,8 +3,6 @@ import { motion } from 'framer-motion'
 import { Slider, SliderProps } from '@mui/material'
 import './style.css'
 
-// todo: antd sharing
-// todo: remote ts
 interface FramerPlaygroundProps {}
 
 function FramerPlayground(props: FramerPlaygroundProps) {

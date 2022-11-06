@@ -50,20 +50,18 @@ function FramerDemo() {
     [createTheme]
   )
 
-  if (loading) {
-    return 'loading'
-  }
-
-  if (error) {
-    return 'loading error'
-  }
-
   return (
     <div className="framer-demo-wrap">
       <div className="playground-wrap">
-        <ThemeProvider theme={theme}>
-          <FramerPlayground />
-        </ThemeProvider>
+        {loading ? (
+          'loading'
+        ) : error ? (
+          'loading error'
+        ) : (
+          <ThemeProvider theme={theme}>
+            <FramerPlayground />
+          </ThemeProvider>
+        )}
       </div>
     </div>
   )
