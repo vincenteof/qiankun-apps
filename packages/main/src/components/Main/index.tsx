@@ -70,6 +70,8 @@ function SideNav() {
   )
 }
 
+const Noop = React.lazy(() => import('@shared/components/Noop'))
+
 type MainContentProps = {
   loading?: boolean
 }
@@ -81,6 +83,9 @@ function MainContent(props: MainContentProps) {
         <div className="flex flex-col w-full h-full text-gray-900 text-xl border-4 border-gray-900 border-dashed">
           {loading && <Loading />}
           <div id="subapp-viewport" />
+          <React.Suspense fallback={<Loading />}>
+            <Noop />
+          </React.Suspense>
         </div>
       </div>
     </main>

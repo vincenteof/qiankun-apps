@@ -9,7 +9,7 @@ const config = defineConfig({
   packageName,
   title: 'react18-demo',
   devServer: {
-    port: 8083,
+    port: 4003,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --open --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "serve": "serve dist -l 8080"
+    "serve": "serve dist -l 4000"
   },
   "keywords": [],
   "author": "vincenteof <vincenteofchen@gamil.com>",

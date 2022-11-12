@@ -98,7 +98,7 @@ function defineConfig(config = {}) {
       static: './dist',
       hot: true,
       historyApiFallback: true,
-      port: 8080,
+      port: 4000,
       ...devServer,
     },
   })

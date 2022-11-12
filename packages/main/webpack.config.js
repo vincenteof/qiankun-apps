@@ -14,7 +14,7 @@ const config = defineConfig({
 const mfConfig = {
   plugins: [
     new ModuleFederationPlugin({
-      name: 'main',
+      name: 'main_host',
       remotes: {
         '@shared': 'shared_remote@http://localhost:8084/remoteEntry.js',
       },

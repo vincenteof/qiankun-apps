@@ -7,10 +7,10 @@ const useDevMode = true
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), qiankun('vue3-app', { useDevMode })],
-  base: 'http://localhost:8082/',
+  base: 'http://localhost:4002/',
   server: {
-    port: 8082,
+    port: 4002,
     cors: true,
-    origin: 'http://localhost:8082',
+    origin: 'http://localhost:4002',
   },
 })

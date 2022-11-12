@@ -28,6 +28,7 @@ const mfConfig = {
       filename: 'remoteEntry.js',
       exposes: {
         './components/FramerPlayground': './src/components/FramerPlayground',
+        './components/Noop': './src/components/Noop',
         './deps/mui': './src/deps/mui',
       },
       shared: {
